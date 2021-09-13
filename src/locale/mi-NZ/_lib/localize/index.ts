@@ -109,7 +109,7 @@ const dayPeriodValues = {
 const ordinalNumber: LocalizeFn<number, undefined> = (dirtyNumber) => {
   const number = Number(dirtyNumber)
 
-  return number + '.'
+  return number + ''
 }
 
 const localize: Localize = {

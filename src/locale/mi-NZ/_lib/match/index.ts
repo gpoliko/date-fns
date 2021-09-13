@@ -3,7 +3,7 @@ import type { Match } from '../../../types'
 import buildMatchFn from '../../../_lib/buildMatchFn/index'
 import buildMatchPatternFn from '../../../_lib/buildMatchPatternFn/index'
 
-const matchOrdinalNumberPattern = /^(\d+)(\.)?/i
+const matchOrdinalNumberPattern = /^(\d+)/i
 const parseOrdinalNumberPattern = /\d+/i
 
 const matchEraPatterns = {
@@ -18,7 +18,7 @@ const parseEraPatterns = {
 const matchQuarterPatterns = {
   narrow: /^[1234]/i,
   abbreviated: /^T[1234]/i,
-  wide: /^[1234]\.? hauwhā/i,
+  wide: /^[1234] hauwhā/i,
 }
 const parseQuarterPatterns = {
   any: [/1/i, /2/i, /3/i, /4/i] as const,
@@ -26,7 +26,7 @@ const parseQuarterPatterns = {
 
 const matchMonthPatterns = {
   narrow: /^[jfmasond]/i,
-  abbreviated: /^(kohi|hui|pou|pae|hara|pipi|hōngo|here|mahu|nuku|rangi|haki)\.?/i,
+  abbreviated: /^(kohi|hui|pou|pae|hara|pipi|hōngo|here|mahu|nuku|rangi|haki)/i,
   wide: /^(kohitātea|huitanguru|poutūterangi|paengawhāwhā|haratua|pipiri|hōngongoi|hereturikōkā|mahuru|whiringa-ā-nuku|whiringa-ā-rangi|hakihea)/i,
 }
 const parseMonthPatterns = {
@@ -73,7 +73,7 @@ const parseDayPatterns = {
 
 const matchDayPeriodPatterns = {
   narrow: /^(am|pm|i|o|te|ra|waenganui|po|ahiahi)/i,
-  any: /^([ap]\.?\s?m\.?|i|o|te|ra|waenganui|po|ahiahi)/i,
+  any: /^([ap]\s?m|i|o|te|ra|waenganui|po|ahiahi)/i,
 }
 const parseDayPeriodPatterns = {
   any: {
